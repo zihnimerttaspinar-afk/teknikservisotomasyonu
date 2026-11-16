@@ -41,8 +41,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.PnlCihaz = new System.Windows.Forms.Panel();
+            this.BtnCihazKayit = new System.Windows.Forms.Button();
             this.PnlCari = new System.Windows.Forms.Panel();
+            this.BtnMailGonder = new System.Windows.Forms.Button();
             this.PnlSistem = new System.Windows.Forms.Panel();
+            this.BtnSirketBilgileriveLimitler = new System.Windows.Forms.Button();
             this.BtnYetkiIslemleri = new System.Windows.Forms.Button();
             this.BtnYedekParcaIslemleri = new System.Windows.Forms.Button();
             this.BtnYedekParcaKategori = new System.Windows.Forms.Button();
@@ -85,6 +88,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LstMarkaIslemleriMarkalar = new System.Windows.Forms.ListBox();
             this.PnlPersonel = new System.Windows.Forms.Panel();
+            this.BtnPersonelDüzenle = new System.Windows.Forms.Button();
+            this.BtnPersonelEkle = new System.Windows.Forms.Button();
             this.PnlCihazIslemleri = new System.Windows.Forms.Panel();
             this.BtnCihazİslemleriCihazSil = new System.Windows.Forms.Button();
             this.BtnCihazİslemleriYeniCihaz = new System.Windows.Forms.Button();
@@ -95,6 +100,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.LstCihazİslemleriCihazAdi = new System.Windows.Forms.ListBox();
             this.PnlYetkiIslemleri = new System.Windows.Forms.Panel();
+            this.TxtYetkiAdi = new System.Windows.Forms.TextBox();
+            this.BtnYetkiGrubuEkle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnYetkiyiKaydet = new System.Windows.Forms.Button();
             this.ChcSistemAyarlari = new System.Windows.Forms.CheckBox();
@@ -106,15 +113,89 @@
             this.ChcPersonelEkleme = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CmbYetkiler = new System.Windows.Forms.ComboBox();
-            this.BtnYetkiGrubuEkle = new System.Windows.Forms.Button();
-            this.TxtYetkiAdi = new System.Windows.Forms.TextBox();
-            this.BtnPersonelEkle = new System.Windows.Forms.Button();
-            this.BtnPersonelDüzenle = new System.Windows.Forms.Button();
             this.PnlPersonelEkle = new System.Windows.Forms.Panel();
+            this.PersonelEkleSifre = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.PersonelEklemaas = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.PersonelEkleGorevi = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.PersonelEkleEmail = new System.Windows.Forms.TextBox();
+            this.PersonelEkleTelefon = new System.Windows.Forms.MaskedTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.PersonelEkleAdiSoyadi = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.PersonelEkleAdres = new System.Windows.Forms.RichTextBox();
+            this.TxtPersonelEkleTC = new System.Windows.Forms.MaskedTextBox();
+            this.CmbPersonelEkleYetki = new System.Windows.Forms.ComboBox();
+            this.BtnPersonelEkleKaydet = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TxtPersonelEkleKullaniciAdi = new System.Windows.Forms.TextBox();
             this.PnlPersonelDuzenle = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleNo = new System.Windows.Forms.TextBox();
+            this.LstPersonelDuzenlePersoneller = new System.Windows.Forms.ListBox();
+            this.BtnPersonelDuzenleSil = new System.Windows.Forms.Button();
+            this.TxtPersonelDuzenleSifre = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleMaas = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleGorevi = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleEmail = new System.Windows.Forms.TextBox();
+            this.TxtPersonelDuzenleTelefon = new System.Windows.Forms.MaskedTextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleAdiSoyadi = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleAdres = new System.Windows.Forms.RichTextBox();
+            this.TxtPersonelDuzenleTC = new System.Windows.Forms.MaskedTextBox();
+            this.CmbPersonelDuzenleYetki = new System.Windows.Forms.ComboBox();
+            this.BtnPersonelDuzenleGuncelle = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.TxtPersonelDuzenleKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.PnlSirketBilgileri = new System.Windows.Forms.Panel();
+            this.GrpLimitİslem = new System.Windows.Forms.GroupBox();
+            this.BtnCariGuncelle = new System.Windows.Forms.Button();
+            this.label45 = new System.Windows.Forms.Label();
+            this.TxtCariLimit = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnIslemEkle = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.CmbIslem = new System.Windows.Forms.ComboBox();
+            this.BtnIslemSil = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.TxtIslem = new System.Windows.Forms.TextBox();
+            this.GrpSirket = new System.Windows.Forms.GroupBox();
+            this.BtnBilgiKaydet = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.TxtAdres = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.TxtGEmailSifre = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.TxtGEmail = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.TxtFax = new System.Windows.Forms.TextBox();
+            this.TxtTelefon = new System.Windows.Forms.TextBox();
+            this.TxtVergiNo = new System.Windows.Forms.TextBox();
+            this.TxtSirketAdi = new System.Windows.Forms.TextBox();
             this.PnlUst.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PnlCihaz.SuspendLayout();
+            this.PnlCari.SuspendLayout();
             this.PnlSistem.SuspendLayout();
             this.PnlYedekParcaIslemleri.SuspendLayout();
             this.PnlYedekParcaKategori.SuspendLayout();
@@ -123,6 +204,11 @@
             this.PnlCihazIslemleri.SuspendLayout();
             this.PnlYetkiIslemleri.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.PnlPersonelEkle.SuspendLayout();
+            this.PnlPersonelDuzenle.SuspendLayout();
+            this.PnlSirketBilgileri.SuspendLayout();
+            this.GrpLimitİslem.SuspendLayout();
+            this.GrpSirket.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlUst
@@ -287,24 +373,66 @@
             // PnlCihaz
             // 
             this.PnlCihaz.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PnlCihaz.Controls.Add(this.BtnCihazKayit);
             this.PnlCihaz.Location = new System.Drawing.Point(0, 89);
             this.PnlCihaz.Name = "PnlCihaz";
             this.PnlCihaz.Size = new System.Drawing.Size(1292, 80);
             this.PnlCihaz.TabIndex = 1;
             this.PnlCihaz.Visible = false;
             // 
+            // BtnCihazKayit
+            // 
+            this.BtnCihazKayit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnCihazKayit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCihazKayit.FlatAppearance.BorderSize = 0;
+            this.BtnCihazKayit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCihazKayit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnCihazKayit.ForeColor = System.Drawing.Color.Navy;
+            this.BtnCihazKayit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCihazKayit.ImageIndex = 5;
+            this.BtnCihazKayit.ImageList = this.ımageList1;
+            this.BtnCihazKayit.Location = new System.Drawing.Point(3, 4);
+            this.BtnCihazKayit.Name = "BtnCihazKayit";
+            this.BtnCihazKayit.Size = new System.Drawing.Size(211, 65);
+            this.BtnCihazKayit.TabIndex = 2;
+            this.BtnCihazKayit.Text = "Cihaz Kaydı Yap";
+            this.BtnCihazKayit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCihazKayit.UseVisualStyleBackColor = false;
+            this.BtnCihazKayit.Click += new System.EventHandler(this.BtnCihazKayit_Click);
+            // 
             // PnlCari
             // 
             this.PnlCari.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PnlCari.Controls.Add(this.BtnMailGonder);
             this.PnlCari.Location = new System.Drawing.Point(0, 89);
             this.PnlCari.Name = "PnlCari";
             this.PnlCari.Size = new System.Drawing.Size(1292, 80);
             this.PnlCari.TabIndex = 2;
             this.PnlCari.Visible = false;
             // 
+            // BtnMailGonder
+            // 
+            this.BtnMailGonder.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnMailGonder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMailGonder.FlatAppearance.BorderSize = 0;
+            this.BtnMailGonder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMailGonder.ForeColor = System.Drawing.Color.Navy;
+            this.BtnMailGonder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnMailGonder.ImageIndex = 0;
+            this.BtnMailGonder.ImageList = this.ımageList1;
+            this.BtnMailGonder.Location = new System.Drawing.Point(3, 4);
+            this.BtnMailGonder.Name = "BtnMailGonder";
+            this.BtnMailGonder.Size = new System.Drawing.Size(214, 73);
+            this.BtnMailGonder.TabIndex = 6;
+            this.BtnMailGonder.Text = "Mail Gönder";
+            this.BtnMailGonder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnMailGonder.UseVisualStyleBackColor = false;
+            this.BtnMailGonder.Click += new System.EventHandler(this.BtnMailGonder_Click);
+            // 
             // PnlSistem
             // 
             this.PnlSistem.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PnlSistem.Controls.Add(this.BtnSirketBilgileriveLimitler);
             this.PnlSistem.Controls.Add(this.BtnYetkiIslemleri);
             this.PnlSistem.Controls.Add(this.BtnYedekParcaIslemleri);
             this.PnlSistem.Controls.Add(this.BtnYedekParcaKategori);
@@ -315,6 +443,25 @@
             this.PnlSistem.Size = new System.Drawing.Size(1292, 80);
             this.PnlSistem.TabIndex = 2;
             this.PnlSistem.Visible = false;
+            // 
+            // BtnSirketBilgileriveLimitler
+            // 
+            this.BtnSirketBilgileriveLimitler.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnSirketBilgileriveLimitler.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSirketBilgileriveLimitler.FlatAppearance.BorderSize = 0;
+            this.BtnSirketBilgileriveLimitler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSirketBilgileriveLimitler.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.BtnSirketBilgileriveLimitler.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSirketBilgileriveLimitler.ImageIndex = 10;
+            this.BtnSirketBilgileriveLimitler.ImageList = this.ımageList1;
+            this.BtnSirketBilgileriveLimitler.Location = new System.Drawing.Point(1103, 5);
+            this.BtnSirketBilgileriveLimitler.Name = "BtnSirketBilgileriveLimitler";
+            this.BtnSirketBilgileriveLimitler.Size = new System.Drawing.Size(171, 66);
+            this.BtnSirketBilgileriveLimitler.TabIndex = 12;
+            this.BtnSirketBilgileriveLimitler.Text = "Şirket Bilgileri\r\nve Limitler";
+            this.BtnSirketBilgileriveLimitler.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSirketBilgileriveLimitler.UseVisualStyleBackColor = false;
+            this.BtnSirketBilgileriveLimitler.Click += new System.EventHandler(this.BtnSirketBilgileriveLimitler_Click);
             // 
             // BtnYetkiIslemleri
             // 
@@ -876,6 +1023,44 @@
             this.PnlPersonel.TabIndex = 3;
             this.PnlPersonel.Visible = false;
             // 
+            // BtnPersonelDüzenle
+            // 
+            this.BtnPersonelDüzenle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnPersonelDüzenle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPersonelDüzenle.FlatAppearance.BorderSize = 0;
+            this.BtnPersonelDüzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPersonelDüzenle.ForeColor = System.Drawing.Color.Black;
+            this.BtnPersonelDüzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPersonelDüzenle.ImageIndex = 13;
+            this.BtnPersonelDüzenle.ImageList = this.ımageList1;
+            this.BtnPersonelDüzenle.Location = new System.Drawing.Point(243, 3);
+            this.BtnPersonelDüzenle.Name = "BtnPersonelDüzenle";
+            this.BtnPersonelDüzenle.Size = new System.Drawing.Size(214, 70);
+            this.BtnPersonelDüzenle.TabIndex = 7;
+            this.BtnPersonelDüzenle.Text = "Personel Düzenle";
+            this.BtnPersonelDüzenle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnPersonelDüzenle.UseVisualStyleBackColor = false;
+            this.BtnPersonelDüzenle.Click += new System.EventHandler(this.BtnPersonelDüzenle_Click);
+            // 
+            // BtnPersonelEkle
+            // 
+            this.BtnPersonelEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnPersonelEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPersonelEkle.FlatAppearance.BorderSize = 0;
+            this.BtnPersonelEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPersonelEkle.ForeColor = System.Drawing.Color.Black;
+            this.BtnPersonelEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPersonelEkle.ImageIndex = 13;
+            this.BtnPersonelEkle.ImageList = this.ımageList1;
+            this.BtnPersonelEkle.Location = new System.Drawing.Point(3, 3);
+            this.BtnPersonelEkle.Name = "BtnPersonelEkle";
+            this.BtnPersonelEkle.Size = new System.Drawing.Size(214, 70);
+            this.BtnPersonelEkle.TabIndex = 6;
+            this.BtnPersonelEkle.Text = "Personel Ekle";
+            this.BtnPersonelEkle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnPersonelEkle.UseVisualStyleBackColor = false;
+            this.BtnPersonelEkle.Click += new System.EventHandler(this.BtnPersonelEkle_Click);
+            // 
             // PnlCihazIslemleri
             // 
             this.PnlCihazIslemleri.BackColor = System.Drawing.Color.SlateGray;
@@ -1002,6 +1187,32 @@
             this.PnlYetkiIslemleri.Size = new System.Drawing.Size(1289, 558);
             this.PnlYetkiIslemleri.TabIndex = 5;
             this.PnlYetkiIslemleri.Visible = false;
+            // 
+            // TxtYetkiAdi
+            // 
+            this.TxtYetkiAdi.BackColor = System.Drawing.Color.Gray;
+            this.TxtYetkiAdi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtYetkiAdi.Location = new System.Drawing.Point(203, 93);
+            this.TxtYetkiAdi.Multiline = true;
+            this.TxtYetkiAdi.Name = "TxtYetkiAdi";
+            this.TxtYetkiAdi.Size = new System.Drawing.Size(272, 29);
+            this.TxtYetkiAdi.TabIndex = 11;
+            this.TxtYetkiAdi.Visible = false;
+            // 
+            // BtnYetkiGrubuEkle
+            // 
+            this.BtnYetkiGrubuEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnYetkiGrubuEkle.FlatAppearance.BorderSize = 0;
+            this.BtnYetkiGrubuEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnYetkiGrubuEkle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnYetkiGrubuEkle.ForeColor = System.Drawing.Color.Black;
+            this.BtnYetkiGrubuEkle.Location = new System.Drawing.Point(203, 147);
+            this.BtnYetkiGrubuEkle.Name = "BtnYetkiGrubuEkle";
+            this.BtnYetkiGrubuEkle.Size = new System.Drawing.Size(273, 31);
+            this.BtnYetkiGrubuEkle.TabIndex = 10;
+            this.BtnYetkiGrubuEkle.Text = "Yetki Grubu Eklemek İstiyorum";
+            this.BtnYetkiGrubuEkle.UseVisualStyleBackColor = false;
+            this.BtnYetkiGrubuEkle.Click += new System.EventHandler(this.BtnYetkiGrubuEkle_Click);
             // 
             // groupBox1
             // 
@@ -1137,99 +1348,849 @@
             this.CmbYetkiler.SelectionChangeCommitted += new System.EventHandler(this.CmbYetkiler_SelectionChangeCommitted);
             this.CmbYetkiler.SelectedValueChanged += new System.EventHandler(this.CmbYetkiler_SelectedValueChanged);
             // 
-            // BtnYetkiGrubuEkle
-            // 
-            this.BtnYetkiGrubuEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.BtnYetkiGrubuEkle.FlatAppearance.BorderSize = 0;
-            this.BtnYetkiGrubuEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnYetkiGrubuEkle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnYetkiGrubuEkle.ForeColor = System.Drawing.Color.Black;
-            this.BtnYetkiGrubuEkle.Location = new System.Drawing.Point(203, 147);
-            this.BtnYetkiGrubuEkle.Name = "BtnYetkiGrubuEkle";
-            this.BtnYetkiGrubuEkle.Size = new System.Drawing.Size(273, 31);
-            this.BtnYetkiGrubuEkle.TabIndex = 10;
-            this.BtnYetkiGrubuEkle.Text = "Yetki Grubu Eklemek İstiyorum";
-            this.BtnYetkiGrubuEkle.UseVisualStyleBackColor = false;
-            this.BtnYetkiGrubuEkle.Click += new System.EventHandler(this.BtnYetkiGrubuEkle_Click);
-            // 
-            // TxtYetkiAdi
-            // 
-            this.TxtYetkiAdi.BackColor = System.Drawing.Color.Gray;
-            this.TxtYetkiAdi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TxtYetkiAdi.Location = new System.Drawing.Point(203, 93);
-            this.TxtYetkiAdi.Multiline = true;
-            this.TxtYetkiAdi.Name = "TxtYetkiAdi";
-            this.TxtYetkiAdi.Size = new System.Drawing.Size(272, 29);
-            this.TxtYetkiAdi.TabIndex = 11;
-            this.TxtYetkiAdi.Visible = false;
-            // 
-            // BtnPersonelEkle
-            // 
-            this.BtnPersonelEkle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnPersonelEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPersonelEkle.FlatAppearance.BorderSize = 0;
-            this.BtnPersonelEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPersonelEkle.ForeColor = System.Drawing.Color.Black;
-            this.BtnPersonelEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPersonelEkle.ImageIndex = 13;
-            this.BtnPersonelEkle.ImageList = this.ımageList1;
-            this.BtnPersonelEkle.Location = new System.Drawing.Point(3, 3);
-            this.BtnPersonelEkle.Name = "BtnPersonelEkle";
-            this.BtnPersonelEkle.Size = new System.Drawing.Size(214, 70);
-            this.BtnPersonelEkle.TabIndex = 6;
-            this.BtnPersonelEkle.Text = "Personel Ekle";
-            this.BtnPersonelEkle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnPersonelEkle.UseVisualStyleBackColor = false;
-            // 
-            // BtnPersonelDüzenle
-            // 
-            this.BtnPersonelDüzenle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnPersonelDüzenle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPersonelDüzenle.FlatAppearance.BorderSize = 0;
-            this.BtnPersonelDüzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPersonelDüzenle.ForeColor = System.Drawing.Color.Black;
-            this.BtnPersonelDüzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPersonelDüzenle.ImageIndex = 13;
-            this.BtnPersonelDüzenle.ImageList = this.ımageList1;
-            this.BtnPersonelDüzenle.Location = new System.Drawing.Point(243, 3);
-            this.BtnPersonelDüzenle.Name = "BtnPersonelDüzenle";
-            this.BtnPersonelDüzenle.Size = new System.Drawing.Size(214, 70);
-            this.BtnPersonelDüzenle.TabIndex = 7;
-            this.BtnPersonelDüzenle.Text = "Personel Düzenle";
-            this.BtnPersonelDüzenle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnPersonelDüzenle.UseVisualStyleBackColor = false;
-            // 
             // PnlPersonelEkle
             // 
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEkleSifre);
+            this.PnlPersonelEkle.Controls.Add(this.label23);
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEklemaas);
+            this.PnlPersonelEkle.Controls.Add(this.label22);
+            this.PnlPersonelEkle.Controls.Add(this.label21);
+            this.PnlPersonelEkle.Controls.Add(this.label20);
+            this.PnlPersonelEkle.Controls.Add(this.label19);
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEkleGorevi);
+            this.PnlPersonelEkle.Controls.Add(this.label18);
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEkleEmail);
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEkleTelefon);
+            this.PnlPersonelEkle.Controls.Add(this.label17);
+            this.PnlPersonelEkle.Controls.Add(this.label16);
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEkleAdiSoyadi);
+            this.PnlPersonelEkle.Controls.Add(this.label15);
+            this.PnlPersonelEkle.Controls.Add(this.PersonelEkleAdres);
+            this.PnlPersonelEkle.Controls.Add(this.TxtPersonelEkleTC);
+            this.PnlPersonelEkle.Controls.Add(this.CmbPersonelEkleYetki);
+            this.PnlPersonelEkle.Controls.Add(this.BtnPersonelEkleKaydet);
+            this.PnlPersonelEkle.Controls.Add(this.label14);
+            this.PnlPersonelEkle.Controls.Add(this.TxtPersonelEkleKullaniciAdi);
             this.PnlPersonelEkle.Location = new System.Drawing.Point(0, 160);
             this.PnlPersonelEkle.Name = "PnlPersonelEkle";
             this.PnlPersonelEkle.Size = new System.Drawing.Size(1289, 558);
             this.PnlPersonelEkle.TabIndex = 6;
             // 
+            // PersonelEkleSifre
+            // 
+            this.PersonelEkleSifre.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PersonelEkleSifre.Location = new System.Drawing.Point(463, 293);
+            this.PersonelEkleSifre.Name = "PersonelEkleSifre";
+            this.PersonelEkleSifre.Size = new System.Drawing.Size(180, 27);
+            this.PersonelEkleSifre.TabIndex = 20;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label23.Location = new System.Drawing.Point(393, 299);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(54, 21);
+            this.label23.TabIndex = 19;
+            this.label23.Text = "Şifre :";
+            // 
+            // PersonelEklemaas
+            // 
+            this.PersonelEklemaas.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PersonelEklemaas.Location = new System.Drawing.Point(463, 251);
+            this.PersonelEklemaas.Name = "PersonelEklemaas";
+            this.PersonelEklemaas.Size = new System.Drawing.Size(180, 27);
+            this.PersonelEklemaas.TabIndex = 18;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label22.Location = new System.Drawing.Point(387, 257);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(60, 21);
+            this.label22.TabIndex = 17;
+            this.label22.Text = "Maaş :";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label21.Location = new System.Drawing.Point(387, 115);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(64, 21);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Adres :";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label20.Location = new System.Drawing.Point(387, 66);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 21);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Yetkisi :";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(115, 299);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(68, 21);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Görevi :";
+            // 
+            // PersonelEkleGorevi
+            // 
+            this.PersonelEkleGorevi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PersonelEkleGorevi.Location = new System.Drawing.Point(198, 293);
+            this.PersonelEkleGorevi.Name = "PersonelEkleGorevi";
+            this.PersonelEkleGorevi.Size = new System.Drawing.Size(149, 27);
+            this.PersonelEkleGorevi.TabIndex = 13;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label18.Location = new System.Drawing.Point(116, 257);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 21);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "E-Mail :";
+            // 
+            // PersonelEkleEmail
+            // 
+            this.PersonelEkleEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PersonelEkleEmail.Location = new System.Drawing.Point(198, 251);
+            this.PersonelEkleEmail.Name = "PersonelEkleEmail";
+            this.PersonelEkleEmail.Size = new System.Drawing.Size(149, 27);
+            this.PersonelEkleEmail.TabIndex = 11;
+            // 
+            // PersonelEkleTelefon
+            // 
+            this.PersonelEkleTelefon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PersonelEkleTelefon.Location = new System.Drawing.Point(198, 203);
+            this.PersonelEkleTelefon.Mask = "(999) 000-0000";
+            this.PersonelEkleTelefon.Name = "PersonelEkleTelefon";
+            this.PersonelEkleTelefon.Size = new System.Drawing.Size(149, 27);
+            this.PersonelEkleTelefon.TabIndex = 10;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(33, 209);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(151, 21);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Telefon Numarası :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(86, 166);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 21);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Adı Soyadı :";
+            // 
+            // PersonelEkleAdiSoyadi
+            // 
+            this.PersonelEkleAdiSoyadi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PersonelEkleAdiSoyadi.Location = new System.Drawing.Point(198, 160);
+            this.PersonelEkleAdiSoyadi.Name = "PersonelEkleAdiSoyadi";
+            this.PersonelEkleAdiSoyadi.Size = new System.Drawing.Size(149, 27);
+            this.PersonelEkleAdiSoyadi.TabIndex = 7;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label15.Location = new System.Drawing.Point(73, 120);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(111, 21);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Kullanıcı Adı :";
+            // 
+            // PersonelEkleAdres
+            // 
+            this.PersonelEkleAdres.Location = new System.Drawing.Point(463, 116);
+            this.PersonelEkleAdres.MaxLength = 256;
+            this.PersonelEkleAdres.Name = "PersonelEkleAdres";
+            this.PersonelEkleAdres.Size = new System.Drawing.Size(180, 114);
+            this.PersonelEkleAdres.TabIndex = 5;
+            this.PersonelEkleAdres.Text = "";
+            // 
+            // TxtPersonelEkleTC
+            // 
+            this.TxtPersonelEkleTC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelEkleTC.Location = new System.Drawing.Point(198, 63);
+            this.TxtPersonelEkleTC.Mask = "00000000000";
+            this.TxtPersonelEkleTC.Name = "TxtPersonelEkleTC";
+            this.TxtPersonelEkleTC.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelEkleTC.TabIndex = 4;
+            // 
+            // CmbPersonelEkleYetki
+            // 
+            this.CmbPersonelEkleYetki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbPersonelEkleYetki.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CmbPersonelEkleYetki.FormattingEnabled = true;
+            this.CmbPersonelEkleYetki.Location = new System.Drawing.Point(463, 63);
+            this.CmbPersonelEkleYetki.Name = "CmbPersonelEkleYetki";
+            this.CmbPersonelEkleYetki.Size = new System.Drawing.Size(180, 27);
+            this.CmbPersonelEkleYetki.TabIndex = 3;
+            // 
+            // BtnPersonelEkleKaydet
+            // 
+            this.BtnPersonelEkleKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnPersonelEkleKaydet.FlatAppearance.BorderSize = 0;
+            this.BtnPersonelEkleKaydet.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnPersonelEkleKaydet.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnPersonelEkleKaydet.Location = new System.Drawing.Point(716, 63);
+            this.BtnPersonelEkleKaydet.Name = "BtnPersonelEkleKaydet";
+            this.BtnPersonelEkleKaydet.Size = new System.Drawing.Size(176, 27);
+            this.BtnPersonelEkleKaydet.TabIndex = 2;
+            this.BtnPersonelEkleKaydet.Text = "Peroneli Kaydet";
+            this.BtnPersonelEkleKaydet.UseVisualStyleBackColor = false;
+            this.BtnPersonelEkleKaydet.Click += new System.EventHandler(this.BtnPersonelEkleKaydet_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(16, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(170, 21);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "T.C Kimlik Numarası :";
+            // 
+            // TxtPersonelEkleKullaniciAdi
+            // 
+            this.TxtPersonelEkleKullaniciAdi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelEkleKullaniciAdi.Location = new System.Drawing.Point(198, 114);
+            this.TxtPersonelEkleKullaniciAdi.Name = "TxtPersonelEkleKullaniciAdi";
+            this.TxtPersonelEkleKullaniciAdi.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelEkleKullaniciAdi.TabIndex = 0;
+            // 
             // PnlPersonelDuzenle
             // 
-            this.PnlPersonelDuzenle.Location = new System.Drawing.Point(0, 168);
+            this.PnlPersonelDuzenle.Controls.Add(this.label34);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleNo);
+            this.PnlPersonelDuzenle.Controls.Add(this.LstPersonelDuzenlePersoneller);
+            this.PnlPersonelDuzenle.Controls.Add(this.BtnPersonelDuzenleSil);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleSifre);
+            this.PnlPersonelDuzenle.Controls.Add(this.label24);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleMaas);
+            this.PnlPersonelDuzenle.Controls.Add(this.label25);
+            this.PnlPersonelDuzenle.Controls.Add(this.label26);
+            this.PnlPersonelDuzenle.Controls.Add(this.label27);
+            this.PnlPersonelDuzenle.Controls.Add(this.label28);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleGorevi);
+            this.PnlPersonelDuzenle.Controls.Add(this.label29);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleEmail);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleTelefon);
+            this.PnlPersonelDuzenle.Controls.Add(this.label30);
+            this.PnlPersonelDuzenle.Controls.Add(this.label31);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleAdiSoyadi);
+            this.PnlPersonelDuzenle.Controls.Add(this.label32);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleAdres);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleTC);
+            this.PnlPersonelDuzenle.Controls.Add(this.CmbPersonelDuzenleYetki);
+            this.PnlPersonelDuzenle.Controls.Add(this.BtnPersonelDuzenleGuncelle);
+            this.PnlPersonelDuzenle.Controls.Add(this.label33);
+            this.PnlPersonelDuzenle.Controls.Add(this.TxtPersonelDuzenleKullaniciAdi);
+            this.PnlPersonelDuzenle.Location = new System.Drawing.Point(0, 160);
             this.PnlPersonelDuzenle.Name = "PnlPersonelDuzenle";
             this.PnlPersonelDuzenle.Size = new System.Drawing.Size(1289, 558);
             this.PnlPersonelDuzenle.TabIndex = 7;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label34.Location = new System.Drawing.Point(380, 64);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(109, 21);
+            this.label34.TabIndex = 45;
+            this.label34.Text = "Personel No :";
+            // 
+            // TxtPersonelDuzenleNo
+            // 
+            this.TxtPersonelDuzenleNo.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleNo.Location = new System.Drawing.Point(503, 60);
+            this.TxtPersonelDuzenleNo.Name = "TxtPersonelDuzenleNo";
+            this.TxtPersonelDuzenleNo.ReadOnly = true;
+            this.TxtPersonelDuzenleNo.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleNo.TabIndex = 44;
+            // 
+            // LstPersonelDuzenlePersoneller
+            // 
+            this.LstPersonelDuzenlePersoneller.FormattingEnabled = true;
+            this.LstPersonelDuzenlePersoneller.ItemHeight = 16;
+            this.LstPersonelDuzenlePersoneller.Location = new System.Drawing.Point(20, 93);
+            this.LstPersonelDuzenlePersoneller.Name = "LstPersonelDuzenlePersoneller";
+            this.LstPersonelDuzenlePersoneller.Size = new System.Drawing.Size(222, 292);
+            this.LstPersonelDuzenlePersoneller.TabIndex = 43;
+            // 
+            // BtnPersonelDuzenleSil
+            // 
+            this.BtnPersonelDuzenleSil.BackColor = System.Drawing.Color.Maroon;
+            this.BtnPersonelDuzenleSil.FlatAppearance.BorderSize = 0;
+            this.BtnPersonelDuzenleSil.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnPersonelDuzenleSil.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnPersonelDuzenleSil.Location = new System.Drawing.Point(1021, 312);
+            this.BtnPersonelDuzenleSil.Name = "BtnPersonelDuzenleSil";
+            this.BtnPersonelDuzenleSil.Size = new System.Drawing.Size(176, 58);
+            this.BtnPersonelDuzenleSil.TabIndex = 42;
+            this.BtnPersonelDuzenleSil.Text = "Personeli sil";
+            this.BtnPersonelDuzenleSil.UseVisualStyleBackColor = false;
+            this.BtnPersonelDuzenleSil.Click += new System.EventHandler(this.BtnPersonelDuzenleSil_Click);
+            // 
+            // TxtPersonelDuzenleSifre
+            // 
+            this.TxtPersonelDuzenleSifre.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleSifre.Location = new System.Drawing.Point(768, 334);
+            this.TxtPersonelDuzenleSifre.Name = "TxtPersonelDuzenleSifre";
+            this.TxtPersonelDuzenleSifre.Size = new System.Drawing.Size(180, 27);
+            this.TxtPersonelDuzenleSifre.TabIndex = 41;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label24.Location = new System.Drawing.Point(698, 340);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(54, 21);
+            this.label24.TabIndex = 40;
+            this.label24.Text = "Şifre :";
+            // 
+            // TxtPersonelDuzenleMaas
+            // 
+            this.TxtPersonelDuzenleMaas.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleMaas.Location = new System.Drawing.Point(768, 292);
+            this.TxtPersonelDuzenleMaas.Name = "TxtPersonelDuzenleMaas";
+            this.TxtPersonelDuzenleMaas.Size = new System.Drawing.Size(180, 27);
+            this.TxtPersonelDuzenleMaas.TabIndex = 39;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label25.Location = new System.Drawing.Point(692, 298);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(60, 21);
+            this.label25.TabIndex = 38;
+            this.label25.Text = "Maaş :";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label26.Location = new System.Drawing.Point(692, 156);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(64, 21);
+            this.label26.TabIndex = 37;
+            this.label26.Text = "Adres :";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label27.Location = new System.Drawing.Point(692, 107);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(70, 21);
+            this.label27.TabIndex = 36;
+            this.label27.Text = "Yetkisi :";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label28.Location = new System.Drawing.Point(420, 340);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(68, 21);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "Görevi :";
+            // 
+            // TxtPersonelDuzenleGorevi
+            // 
+            this.TxtPersonelDuzenleGorevi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleGorevi.Location = new System.Drawing.Point(503, 334);
+            this.TxtPersonelDuzenleGorevi.Name = "TxtPersonelDuzenleGorevi";
+            this.TxtPersonelDuzenleGorevi.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleGorevi.TabIndex = 34;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label29.Location = new System.Drawing.Point(421, 298);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(67, 21);
+            this.label29.TabIndex = 33;
+            this.label29.Text = "E-Mail :";
+            // 
+            // TxtPersonelDuzenleEmail
+            // 
+            this.TxtPersonelDuzenleEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleEmail.Location = new System.Drawing.Point(503, 292);
+            this.TxtPersonelDuzenleEmail.Name = "TxtPersonelDuzenleEmail";
+            this.TxtPersonelDuzenleEmail.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleEmail.TabIndex = 32;
+            // 
+            // TxtPersonelDuzenleTelefon
+            // 
+            this.TxtPersonelDuzenleTelefon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleTelefon.Location = new System.Drawing.Point(503, 244);
+            this.TxtPersonelDuzenleTelefon.Mask = "(999) 000-0000";
+            this.TxtPersonelDuzenleTelefon.Name = "TxtPersonelDuzenleTelefon";
+            this.TxtPersonelDuzenleTelefon.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleTelefon.TabIndex = 31;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label30.Location = new System.Drawing.Point(338, 250);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(151, 21);
+            this.label30.TabIndex = 30;
+            this.label30.Text = "Telefon Numarası :";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label31.Location = new System.Drawing.Point(391, 207);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(98, 21);
+            this.label31.TabIndex = 29;
+            this.label31.Text = "Adı Soyadı :";
+            // 
+            // TxtPersonelDuzenleAdiSoyadi
+            // 
+            this.TxtPersonelDuzenleAdiSoyadi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleAdiSoyadi.Location = new System.Drawing.Point(503, 201);
+            this.TxtPersonelDuzenleAdiSoyadi.Name = "TxtPersonelDuzenleAdiSoyadi";
+            this.TxtPersonelDuzenleAdiSoyadi.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleAdiSoyadi.TabIndex = 28;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label32.Location = new System.Drawing.Point(378, 161);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(111, 21);
+            this.label32.TabIndex = 27;
+            this.label32.Text = "Kullanıcı Adı :";
+            // 
+            // TxtPersonelDuzenleAdres
+            // 
+            this.TxtPersonelDuzenleAdres.Location = new System.Drawing.Point(768, 157);
+            this.TxtPersonelDuzenleAdres.MaxLength = 256;
+            this.TxtPersonelDuzenleAdres.Name = "TxtPersonelDuzenleAdres";
+            this.TxtPersonelDuzenleAdres.Size = new System.Drawing.Size(180, 114);
+            this.TxtPersonelDuzenleAdres.TabIndex = 26;
+            this.TxtPersonelDuzenleAdres.Text = "";
+            // 
+            // TxtPersonelDuzenleTC
+            // 
+            this.TxtPersonelDuzenleTC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleTC.Location = new System.Drawing.Point(503, 104);
+            this.TxtPersonelDuzenleTC.Mask = "00000000000";
+            this.TxtPersonelDuzenleTC.Name = "TxtPersonelDuzenleTC";
+            this.TxtPersonelDuzenleTC.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleTC.TabIndex = 25;
+            // 
+            // CmbPersonelDuzenleYetki
+            // 
+            this.CmbPersonelDuzenleYetki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbPersonelDuzenleYetki.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CmbPersonelDuzenleYetki.FormattingEnabled = true;
+            this.CmbPersonelDuzenleYetki.Location = new System.Drawing.Point(768, 104);
+            this.CmbPersonelDuzenleYetki.Name = "CmbPersonelDuzenleYetki";
+            this.CmbPersonelDuzenleYetki.Size = new System.Drawing.Size(180, 27);
+            this.CmbPersonelDuzenleYetki.TabIndex = 24;
+            // 
+            // BtnPersonelDuzenleGuncelle
+            // 
+            this.BtnPersonelDuzenleGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BtnPersonelDuzenleGuncelle.FlatAppearance.BorderSize = 0;
+            this.BtnPersonelDuzenleGuncelle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnPersonelDuzenleGuncelle.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnPersonelDuzenleGuncelle.Location = new System.Drawing.Point(1021, 250);
+            this.BtnPersonelDuzenleGuncelle.Name = "BtnPersonelDuzenleGuncelle";
+            this.BtnPersonelDuzenleGuncelle.Size = new System.Drawing.Size(176, 52);
+            this.BtnPersonelDuzenleGuncelle.TabIndex = 23;
+            this.BtnPersonelDuzenleGuncelle.Text = "Personeli Güncelle";
+            this.BtnPersonelDuzenleGuncelle.UseVisualStyleBackColor = false;
+            this.BtnPersonelDuzenleGuncelle.Click += new System.EventHandler(this.BtnPersonelDuzenleGuncelle_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label33.Location = new System.Drawing.Point(321, 110);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(170, 21);
+            this.label33.TabIndex = 22;
+            this.label33.Text = "T.C Kimlik Numarası :";
+            // 
+            // TxtPersonelDuzenleKullaniciAdi
+            // 
+            this.TxtPersonelDuzenleKullaniciAdi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TxtPersonelDuzenleKullaniciAdi.Location = new System.Drawing.Point(503, 155);
+            this.TxtPersonelDuzenleKullaniciAdi.Name = "TxtPersonelDuzenleKullaniciAdi";
+            this.TxtPersonelDuzenleKullaniciAdi.Size = new System.Drawing.Size(149, 27);
+            this.TxtPersonelDuzenleKullaniciAdi.TabIndex = 21;
+            // 
+            // PnlSirketBilgileri
+            // 
+            this.PnlSirketBilgileri.Controls.Add(this.GrpLimitİslem);
+            this.PnlSirketBilgileri.Controls.Add(this.GrpSirket);
+            this.PnlSirketBilgileri.Location = new System.Drawing.Point(0, 160);
+            this.PnlSirketBilgileri.Name = "PnlSirketBilgileri";
+            this.PnlSirketBilgileri.Size = new System.Drawing.Size(1289, 558);
+            this.PnlSirketBilgileri.TabIndex = 8;
+            // 
+            // GrpLimitİslem
+            // 
+            this.GrpLimitİslem.Controls.Add(this.BtnCariGuncelle);
+            this.GrpLimitİslem.Controls.Add(this.label45);
+            this.GrpLimitİslem.Controls.Add(this.TxtCariLimit);
+            this.GrpLimitİslem.Controls.Add(this.panel2);
+            this.GrpLimitİslem.Controls.Add(this.BtnIslemEkle);
+            this.GrpLimitİslem.Controls.Add(this.label44);
+            this.GrpLimitİslem.Controls.Add(this.CmbIslem);
+            this.GrpLimitİslem.Controls.Add(this.BtnIslemSil);
+            this.GrpLimitİslem.Controls.Add(this.label43);
+            this.GrpLimitİslem.Controls.Add(this.TxtIslem);
+            this.GrpLimitİslem.Dock = System.Windows.Forms.DockStyle.Right;
+            this.GrpLimitİslem.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GrpLimitİslem.ForeColor = System.Drawing.Color.White;
+            this.GrpLimitİslem.Location = new System.Drawing.Point(702, 0);
+            this.GrpLimitİslem.Name = "GrpLimitİslem";
+            this.GrpLimitİslem.Size = new System.Drawing.Size(587, 558);
+            this.GrpLimitİslem.TabIndex = 1;
+            this.GrpLimitİslem.TabStop = false;
+            this.GrpLimitİslem.Text = " Limit ve İşlemler";
+            // 
+            // BtnCariGuncelle
+            // 
+            this.BtnCariGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BtnCariGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCariGuncelle.FlatAppearance.BorderSize = 0;
+            this.BtnCariGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCariGuncelle.ForeColor = System.Drawing.Color.White;
+            this.BtnCariGuncelle.Location = new System.Drawing.Point(392, 248);
+            this.BtnCariGuncelle.Name = "BtnCariGuncelle";
+            this.BtnCariGuncelle.Size = new System.Drawing.Size(141, 28);
+            this.BtnCariGuncelle.TabIndex = 24;
+            this.BtnCariGuncelle.Text = "GÜNCELLE";
+            this.BtnCariGuncelle.UseVisualStyleBackColor = false;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(21, 248);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(141, 21);
+            this.label45.TabIndex = 22;
+            this.label45.Text = "Cari Hesap Limiti:";
+            // 
+            // TxtCariLimit
+            // 
+            this.TxtCariLimit.Location = new System.Drawing.Point(181, 247);
+            this.TxtCariLimit.Name = "TxtCariLimit";
+            this.TxtCariLimit.Size = new System.Drawing.Size(170, 28);
+            this.TxtCariLimit.TabIndex = 23;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(6, 195);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(581, 10);
+            this.panel2.TabIndex = 21;
+            // 
+            // BtnIslemEkle
+            // 
+            this.BtnIslemEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BtnIslemEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnIslemEkle.FlatAppearance.BorderSize = 0;
+            this.BtnIslemEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIslemEkle.ForeColor = System.Drawing.Color.White;
+            this.BtnIslemEkle.Location = new System.Drawing.Point(339, 108);
+            this.BtnIslemEkle.Name = "BtnIslemEkle";
+            this.BtnIslemEkle.Size = new System.Drawing.Size(141, 28);
+            this.BtnIslemEkle.TabIndex = 20;
+            this.BtnIslemEkle.Text = "Sil";
+            this.BtnIslemEkle.UseVisualStyleBackColor = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(35, 110);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 21);
+            this.label44.TabIndex = 19;
+            this.label44.Text = "İşlem Sil:";
+            // 
+            // CmbIslem
+            // 
+            this.CmbIslem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbIslem.FormattingEnabled = true;
+            this.CmbIslem.Location = new System.Drawing.Point(130, 107);
+            this.CmbIslem.Name = "CmbIslem";
+            this.CmbIslem.Size = new System.Drawing.Size(170, 29);
+            this.CmbIslem.TabIndex = 18;
+            // 
+            // BtnIslemSil
+            // 
+            this.BtnIslemSil.BackColor = System.Drawing.Color.Maroon;
+            this.BtnIslemSil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnIslemSil.FlatAppearance.BorderSize = 0;
+            this.BtnIslemSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIslemSil.ForeColor = System.Drawing.Color.White;
+            this.BtnIslemSil.Location = new System.Drawing.Point(339, 53);
+            this.BtnIslemSil.Name = "BtnIslemSil";
+            this.BtnIslemSil.Size = new System.Drawing.Size(141, 28);
+            this.BtnIslemSil.TabIndex = 17;
+            this.BtnIslemSil.Text = "EKLE";
+            this.BtnIslemSil.UseVisualStyleBackColor = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(21, 57);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(93, 21);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "İşlem Ekle:";
+            // 
+            // TxtIslem
+            // 
+            this.TxtIslem.Location = new System.Drawing.Point(130, 53);
+            this.TxtIslem.Name = "TxtIslem";
+            this.TxtIslem.Size = new System.Drawing.Size(170, 28);
+            this.TxtIslem.TabIndex = 3;
+            // 
+            // GrpSirket
+            // 
+            this.GrpSirket.Controls.Add(this.BtnBilgiKaydet);
+            this.GrpSirket.Controls.Add(this.label41);
+            this.GrpSirket.Controls.Add(this.label35);
+            this.GrpSirket.Controls.Add(this.TxtAdres);
+            this.GrpSirket.Controls.Add(this.label36);
+            this.GrpSirket.Controls.Add(this.label42);
+            this.GrpSirket.Controls.Add(this.label37);
+            this.GrpSirket.Controls.Add(this.TxtGEmailSifre);
+            this.GrpSirket.Controls.Add(this.label38);
+            this.GrpSirket.Controls.Add(this.TxtGEmail);
+            this.GrpSirket.Controls.Add(this.label40);
+            this.GrpSirket.Controls.Add(this.TxtEmail);
+            this.GrpSirket.Controls.Add(this.label39);
+            this.GrpSirket.Controls.Add(this.TxtFax);
+            this.GrpSirket.Controls.Add(this.TxtTelefon);
+            this.GrpSirket.Controls.Add(this.TxtVergiNo);
+            this.GrpSirket.Controls.Add(this.TxtSirketAdi);
+            this.GrpSirket.Dock = System.Windows.Forms.DockStyle.Left;
+            this.GrpSirket.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GrpSirket.ForeColor = System.Drawing.Color.White;
+            this.GrpSirket.Location = new System.Drawing.Point(0, 0);
+            this.GrpSirket.Name = "GrpSirket";
+            this.GrpSirket.Size = new System.Drawing.Size(692, 558);
+            this.GrpSirket.TabIndex = 0;
+            this.GrpSirket.TabStop = false;
+            this.GrpSirket.Text = "Şirket Bilgileri";
+            // 
+            // BtnBilgiKaydet
+            // 
+            this.BtnBilgiKaydet.BackColor = System.Drawing.Color.White;
+            this.BtnBilgiKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBilgiKaydet.FlatAppearance.BorderSize = 0;
+            this.BtnBilgiKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBilgiKaydet.ForeColor = System.Drawing.Color.DarkRed;
+            this.BtnBilgiKaydet.Location = new System.Drawing.Point(443, 334);
+            this.BtnBilgiKaydet.Name = "BtnBilgiKaydet";
+            this.BtnBilgiKaydet.Size = new System.Drawing.Size(189, 36);
+            this.BtnBilgiKaydet.TabIndex = 16;
+            this.BtnBilgiKaydet.Text = "Bilgileri Kaydet";
+            this.BtnBilgiKaydet.UseVisualStyleBackColor = false;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(9, 361);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(136, 42);
+            this.label41.TabIndex = 12;
+            this.label41.Text = "Gönderici E-Mail:\r\nŞifre";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(58, 58);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(87, 21);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Şirket Adı:";
+            // 
+            // TxtAdres
+            // 
+            this.TxtAdres.Location = new System.Drawing.Point(429, 50);
+            this.TxtAdres.Multiline = true;
+            this.TxtAdres.Name = "TxtAdres";
+            this.TxtAdres.Size = new System.Drawing.Size(214, 254);
+            this.TxtAdres.TabIndex = 15;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(16, 107);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(129, 21);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Vergi Numarası:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(364, 51);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(59, 21);
+            this.label42.TabIndex = 14;
+            this.label42.Text = "Adres:";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(74, 156);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(71, 21);
+            this.label37.TabIndex = 4;
+            this.label37.Text = "Telefon:";
+            // 
+            // TxtGEmailSifre
+            // 
+            this.TxtGEmailSifre.Location = new System.Drawing.Point(151, 359);
+            this.TxtGEmailSifre.Name = "TxtGEmailSifre";
+            this.TxtGEmailSifre.Size = new System.Drawing.Size(170, 28);
+            this.TxtGEmailSifre.TabIndex = 13;
+            this.TxtGEmailSifre.UseSystemPasswordChar = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(103, 209);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(42, 21);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "Fax:";
+            // 
+            // TxtGEmail
+            // 
+            this.TxtGEmail.Location = new System.Drawing.Point(151, 310);
+            this.TxtGEmail.Name = "TxtGEmail";
+            this.TxtGEmail.Size = new System.Drawing.Size(170, 28);
+            this.TxtGEmail.TabIndex = 11;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(9, 312);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(136, 21);
+            this.label40.TabIndex = 10;
+            this.label40.Text = "Gönderici E-Mail:";
+            // 
+            // TxtEmail
+            // 
+            this.TxtEmail.Location = new System.Drawing.Point(151, 254);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(170, 28);
+            this.TxtEmail.TabIndex = 9;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(83, 265);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 21);
+            this.label39.TabIndex = 8;
+            this.label39.Text = "E-Mail:";
+            // 
+            // TxtFax
+            // 
+            this.TxtFax.Location = new System.Drawing.Point(151, 204);
+            this.TxtFax.Name = "TxtFax";
+            this.TxtFax.Size = new System.Drawing.Size(170, 28);
+            this.TxtFax.TabIndex = 7;
+            // 
+            // TxtTelefon
+            // 
+            this.TxtTelefon.Location = new System.Drawing.Point(151, 153);
+            this.TxtTelefon.Name = "TxtTelefon";
+            this.TxtTelefon.Size = new System.Drawing.Size(170, 28);
+            this.TxtTelefon.TabIndex = 5;
+            // 
+            // TxtVergiNo
+            // 
+            this.TxtVergiNo.Location = new System.Drawing.Point(151, 102);
+            this.TxtVergiNo.Name = "TxtVergiNo";
+            this.TxtVergiNo.Size = new System.Drawing.Size(170, 28);
+            this.TxtVergiNo.TabIndex = 3;
+            // 
+            // TxtSirketAdi
+            // 
+            this.TxtSirketAdi.Location = new System.Drawing.Point(151, 52);
+            this.TxtSirketAdi.Name = "TxtSirketAdi";
+            this.TxtSirketAdi.Size = new System.Drawing.Size(170, 28);
+            this.TxtSirketAdi.TabIndex = 1;
             // 
             // FrmAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(1289, 895);
-            this.Controls.Add(this.PnlPersonelDuzenle);
-            this.Controls.Add(this.PnlPersonelEkle);
-            this.Controls.Add(this.PnlYetkiIslemleri);
-            this.Controls.Add(this.PnlCihazIslemleri);
-            this.Controls.Add(this.PnlYedekParcaIslemleri);
-            this.Controls.Add(this.PnlPersonel);
+            this.ClientSize = new System.Drawing.Size(1289, 573);
             this.Controls.Add(this.PnlCari);
+            this.Controls.Add(this.PnlSirketBilgileri);
+            this.Controls.Add(this.PnlCihazIslemleri);
+            this.Controls.Add(this.PnlPersonelDuzenle);
+            this.Controls.Add(this.PnlYetkiIslemleri);
+            this.Controls.Add(this.PnlYedekParcaIslemleri);
             this.Controls.Add(this.PnlCihaz);
             this.Controls.Add(this.PnlUst);
             this.Controls.Add(this.PnlYedekParcaKategori);
             this.Controls.Add(this.PnlMarkaIslemleri);
+            this.Controls.Add(this.PnlPersonelEkle);
+            this.Controls.Add(this.PnlPersonel);
             this.Controls.Add(this.PnlSistem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAnasayfa";
@@ -1238,6 +2199,8 @@
             this.PnlUst.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PnlCihaz.ResumeLayout(false);
+            this.PnlCari.ResumeLayout(false);
             this.PnlSistem.ResumeLayout(false);
             this.PnlYedekParcaIslemleri.ResumeLayout(false);
             this.PnlYedekParcaIslemleri.PerformLayout();
@@ -1252,6 +2215,15 @@
             this.PnlYetkiIslemleri.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.PnlPersonelEkle.ResumeLayout(false);
+            this.PnlPersonelEkle.PerformLayout();
+            this.PnlPersonelDuzenle.ResumeLayout(false);
+            this.PnlPersonelDuzenle.PerformLayout();
+            this.PnlSirketBilgileri.ResumeLayout(false);
+            this.GrpLimitİslem.ResumeLayout(false);
+            this.GrpLimitİslem.PerformLayout();
+            this.GrpSirket.ResumeLayout(false);
+            this.GrpSirket.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1340,5 +2312,84 @@
         private System.Windows.Forms.Button BtnPersonelEkle;
         private System.Windows.Forms.Panel PnlPersonelEkle;
         private System.Windows.Forms.Panel PnlPersonelDuzenle;
+        private System.Windows.Forms.ComboBox CmbPersonelEkleYetki;
+        private System.Windows.Forms.Button BtnPersonelEkleKaydet;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox TxtPersonelEkleKullaniciAdi;
+        private System.Windows.Forms.RichTextBox PersonelEkleAdres;
+        private System.Windows.Forms.MaskedTextBox TxtPersonelEkleTC;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.MaskedTextBox PersonelEkleTelefon;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox PersonelEkleAdiSoyadi;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox PersonelEkleGorevi;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox PersonelEkleEmail;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox PersonelEkleSifre;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox PersonelEklemaas;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ListBox LstPersonelDuzenlePersoneller;
+        private System.Windows.Forms.Button BtnPersonelDuzenleSil;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleSifre;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleMaas;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleGorevi;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleEmail;
+        private System.Windows.Forms.MaskedTextBox TxtPersonelDuzenleTelefon;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleAdiSoyadi;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.RichTextBox TxtPersonelDuzenleAdres;
+        private System.Windows.Forms.MaskedTextBox TxtPersonelDuzenleTC;
+        private System.Windows.Forms.ComboBox CmbPersonelDuzenleYetki;
+        private System.Windows.Forms.Button BtnPersonelDuzenleGuncelle;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleKullaniciAdi;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox TxtPersonelDuzenleNo;
+        private System.Windows.Forms.Button BtnCihazKayit;
+        private System.Windows.Forms.Button BtnSirketBilgileriveLimitler;
+        private System.Windows.Forms.Panel PnlSirketBilgileri;
+        private System.Windows.Forms.GroupBox GrpLimitİslem;
+        private System.Windows.Forms.GroupBox GrpSirket;
+        private System.Windows.Forms.TextBox TxtSirketAdi;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox TxtAdres;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox TxtGEmailSifre;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox TxtGEmail;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox TxtFax;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox TxtTelefon;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox TxtVergiNo;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button BtnBilgiKaydet;
+        private System.Windows.Forms.Button BtnIslemSil;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox TxtIslem;
+        private System.Windows.Forms.Button BtnIslemEkle;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ComboBox CmbIslem;
+        private System.Windows.Forms.Button BtnCariGuncelle;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox TxtCariLimit;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnMailGonder;
     }
 }

@@ -14,23 +14,73 @@ namespace teknikservisotomasyonu
 {
     public partial class FrmAnasayfa : Form
     {
+        bool iletisimvar = false;
+
         public FrmAnasayfa()
         {
             InitializeComponent();
+
+            // Olay (Event) bağlantılarını otomatik kur
+            LstPersonelDuzenlePersoneller.DoubleClick -= LstPersonelDuzenlePersoneller_DoubleClick;
+            LstPersonelDuzenlePersoneller.DoubleClick += LstPersonelDuzenlePersoneller_DoubleClick;
+
+            BtnPersonelDuzenleGuncelle.Click -= BtnPersonelDuzenleGuncelle_Click;
+            BtnPersonelDuzenleGuncelle.Click += BtnPersonelDuzenleGuncelle_Click;
+
+            BtnPersonelDuzenleSil.Click -= BtnPersonelDuzenleSil_Click;
+            BtnPersonelDuzenleSil.Click += BtnPersonelDuzenleSil_Click;
+
+            BtnPersonelEkleKaydet.Click -= BtnPersonelEkleKaydet_Click;
+            BtnPersonelEkleKaydet.Click += BtnPersonelEkleKaydet_Click;
+
+            BtnSirketBilgileriveLimitler.Click -= BtnSirketBilgileriveLimitler_Click;
+            BtnSirketBilgileriveLimitler.Click += BtnSirketBilgileriveLimitler_Click;
+
+            BtnBilgiKaydet.Click -= BtnBilgiKaydet_Click;
+            BtnBilgiKaydet.Click += BtnBilgiKaydet_Click;
+
+            BtnCariGuncelle.Click -= BtnCariGuncelle_Click;
+            BtnCariGuncelle.Click += BtnCariGuncelle_Click;
+
+            BtnIslemEkle.Click -= BtnIslemEkle_Click;
+            BtnIslemEkle.Click += BtnIslemEkle_Click;
+
+            BtnIslemSil.Click -= BtnIslemSil_Click;
+            BtnIslemSil.Click += BtnIslemSil_Click;
+
+            BtnCihazKayit.Click -= BtnCihazKayit_Click;
+            BtnCihazKayit.Click += BtnCihazKayit_Click;
+
+            BtnMailGonder.Click -= BtnMailGonder_Click;
+            BtnMailGonder.Click += BtnMailGonder_Click;
         }
+
         void yetkidoldur()
         {
+            if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
             SqlDataAdapter adtr = new SqlDataAdapter("Select * From Yetkilendirme", Ayar.con);
             Ayar.con.Open();
             DataTable table = new DataTable();
             adtr.Fill(table);
+
             CmbYetkiler.DataSource = null;
             CmbYetkiler.DisplayMember = "YetkiAdi";
             CmbYetkiler.ValueMember = "Yetkiid";
             CmbYetkiler.DataSource = table;
-
             CmbYetkiler.SelectedValue = -1;
-           
+
+            CmbPersonelEkleYetki.DataSource = null;
+            CmbPersonelEkleYetki.DisplayMember = "YetkiAdi";
+            CmbPersonelEkleYetki.ValueMember = "Yetkiid";
+            CmbPersonelEkleYetki.DataSource = table;
+            CmbPersonelEkleYetki.SelectedValue = -1;
+
+            CmbPersonelDuzenleYetki.DataSource = null;
+            CmbPersonelDuzenleYetki.DisplayMember = "YetkiAdi";
+            CmbPersonelDuzenleYetki.ValueMember = "Yetkiid";
+            CmbPersonelDuzenleYetki.DataSource = table;
+            CmbPersonelDuzenleYetki.SelectedValue = -1;
+
             ChcCarilIslemler.Checked = false;
             ChcKayitAcma.Checked = false;
             ChcKayitTamamlama.Checked = false;
@@ -41,6 +91,51 @@ namespace teknikservisotomasyonu
 
             Ayar.con.Close();
         }
+
+        void personeldoldur()
+        {
+            if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+            SqlDataAdapter adtr = new SqlDataAdapter("Select * From Personel WHERE Silindi = 0 OR Silindi IS NULL", Ayar.con);
+            Ayar.con.Open();
+            DataTable table = new DataTable();
+            adtr.Fill(table);
+
+            LstPersonelDuzenlePersoneller.DataSource = null;
+            LstPersonelDuzenlePersoneller.DisplayMember = "AdiSoyadi";
+            LstPersonelDuzenlePersoneller.ValueMember = "PersonelNo";
+            LstPersonelDuzenlePersoneller.DataSource = table;
+
+            Ayar.con.Close();
+        }
+
+        void personelekletemizle()
+        {
+            TxtPersonelEkleTC.Clear();
+            TxtPersonelEkleKullaniciAdi.Clear();
+            PersonelEkleAdiSoyadi.Clear();
+            PersonelEkleTelefon.Clear();
+            PersonelEkleEmail.Clear();
+            PersonelEkleGorevi.Clear();
+            CmbPersonelEkleYetki.SelectedValue = -1;
+            PersonelEkleAdres.Clear();
+            PersonelEklemaas.Clear();
+            PersonelEkleSifre.Clear();
+        }
+
+        void personelduzenletemizle()
+        {
+            TxtPersonelDuzenleNo.Clear();
+            TxtPersonelDuzenleTC.Clear();
+            TxtPersonelDuzenleKullaniciAdi.Clear();
+            TxtPersonelDuzenleAdiSoyadi.Clear();
+            TxtPersonelDuzenleTelefon.Clear();
+            TxtPersonelDuzenleEmail.Clear();
+            TxtPersonelDuzenleGorevi.Clear();
+            CmbPersonelDuzenleYetki.SelectedValue = -1;
+            TxtPersonelDuzenleMaas.Clear();
+            TxtPersonelDuzenleSifre.Clear();
+        }
+
         void cihazdoldur()
         {
             SqlDataAdapter adtr = new SqlDataAdapter("Select * From Cihazlar WHERE Silindi = 0", Ayar.con);
@@ -52,7 +147,6 @@ namespace teknikservisotomasyonu
             LstCihazİslemleriCihazAdi.ValueMember = "cihazid";
             LstCihazİslemleriCihazAdi.DataSource = table;
             Ayar.con.Close();
-
         }
 
         void kategoridoldur()
@@ -78,6 +172,7 @@ namespace teknikservisotomasyonu
             CmbYedekParçaİslemleriKategori.SelectedValue = -1;
             Ayar.con.Close();
         }
+
         void markadoldur()
         {
             SqlDataAdapter adtr = new SqlDataAdapter("Select * From Marka WHERE Silindi = 0", Ayar.con);
@@ -98,6 +193,19 @@ namespace teknikservisotomasyonu
             CmbYedekParçaİslemleriMarka.SelectedValue = -1;
             Ayar.con.Close();
         }
+
+        void panellerikapat()
+        {
+            PnlMarkaIslemleri.Visible = false;
+            PnlCihazIslemleri.Visible = false;
+            PnlYedekParcaKategori.Visible = false;
+            PnlYedekParcaIslemleri.Visible = false;
+            PnlYetkiIslemleri.Visible = false;
+            PnlPersonelDuzenle.Visible = false;
+            PnlPersonelEkle.Visible = false;
+            PnlSirketBilgileri.Visible = false;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (PnlCihaz.Visible == true)
@@ -118,7 +226,6 @@ namespace teknikservisotomasyonu
                 PnlSistem.Visible = false;
                 PnlCari.Visible = false;
             }
-           
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -139,7 +246,6 @@ namespace teknikservisotomasyonu
                 PnlPersonel.Visible = false;
                 PnlSistem.Visible = false;
                 PnlCari.Visible = true;
-
             }
         }
 
@@ -192,17 +298,20 @@ namespace teknikservisotomasyonu
             this.Close();
         }
 
+        private void BtnCihazKaydi_Click(object sender, EventArgs e)
+        {
+            FrmCihazKayit frm = new FrmCihazKayit();
+            frm.Show();
+        }
+
         private void BtnMarkaIslemleri_Click(object sender, EventArgs e)
         {
             markadoldur();
             TxtMarkaIslemleriMarkaAdi.Text = "";
             LblMarkaIslemleriMarkaId.Text = "";
+            panellerikapat();
             PnlMarkaIslemleri.Visible = true;
-            PnlCihazIslemleri.Visible = false;
-            PnlYedekParcaKategori.Visible = false;
-            PnlYedekParcaIslemleri.Visible = false;
-            PnlYetkiIslemleri.Visible = false;
-            
+
             BtnMarkaGuncelle.Enabled = false;
             BtnMarkaSil.Enabled = false;
             BtnYeniMarka.Enabled = true;
@@ -210,11 +319,7 @@ namespace teknikservisotomasyonu
 
         private void BtnModelIslemleri_Click(object sender, EventArgs e)
         {
-            PnlMarkaIslemleri.Visible = false;
-            PnlCihazIslemleri.Visible = false;
-            PnlYedekParcaKategori.Visible = false;
-            PnlYedekParcaIslemleri.Visible = false;
-            PnlYetkiIslemleri.Visible = false;
+            panellerikapat();
         }
 
         private void BtnCihazIslemleri_Click(object sender, EventArgs e)
@@ -222,11 +327,8 @@ namespace teknikservisotomasyonu
             cihazdoldur();
             TxtCihazİslemleriCihazAdi.Text = "";
             LblCihazİslemleriCihazId.Text = "";
-            PnlMarkaIslemleri.Visible = false;
+            panellerikapat();
             PnlCihazIslemleri.Visible = true;
-            PnlYedekParcaKategori.Visible = false;
-            PnlYedekParcaIslemleri.Visible = false;
-            PnlYetkiIslemleri.Visible = false;
 
             BtnCihazİslemleriCihazGuncelle.Enabled = false;
             BtnCihazİslemleriCihazSil.Enabled = false;
@@ -239,11 +341,9 @@ namespace teknikservisotomasyonu
             markadoldur();
             TxtYedekParcaKategoriİslemleriKtAdi.Text = "";
             LblYedekParcaKategoriİslemleriKtid.Text = "";
-            PnlMarkaIslemleri.Visible = false;
-            PnlCihazIslemleri.Visible = false;
+            panellerikapat();
             PnlYedekParcaKategori.Visible = true;
-            PnlYedekParcaIslemleri.Visible = false;
-            PnlYetkiIslemleri.Visible = false;
+
             BtnYedekParcaKategoriİslemleriGuncelle.Enabled = false;
             BtnYedekParcaKategoriİslemleriSil.Enabled = false;
             BtnYedekParcaKategoriİslemleriYeniKategori.Enabled = true;
@@ -264,21 +364,14 @@ namespace teknikservisotomasyonu
             BtnYedekParcaİslemlerSil.Enabled = false;
             BtnYedekParcaİslemleriYeniYedekParca.Enabled = true;
 
-            PnlMarkaIslemleri.Visible = false;
-            PnlCihazIslemleri.Visible = false;
-            PnlYedekParcaKategori.Visible = false;
+            panellerikapat();
             PnlYedekParcaIslemleri.Visible = true;
-            PnlYetkiIslemleri.Visible = false;
         }
 
         private void BtnYetkiIslemleri_Click(object sender, EventArgs e)
         {
             yetkidoldur();
-
-            PnlMarkaIslemleri.Visible = false; 
-            PnlCihazIslemleri.Visible = false;
-            PnlYedekParcaKategori.Visible = false;
-            PnlYedekParcaIslemleri.Visible = false;
+            panellerikapat();
             PnlYetkiIslemleri.Visible = true;
         }
 
@@ -287,8 +380,8 @@ namespace teknikservisotomasyonu
             BtnMarkaGuncelle.Enabled = true;
             BtnMarkaSil.Enabled = true;
             BtnYeniMarka.Enabled = false;
-            TxtMarkaIslemleriMarkaAdi.Text=LstMarkaIslemleriMarkalar.Text;
-            LblMarkaIslemleriMarkaId.Text=LstMarkaIslemleriMarkalar.SelectedValue.ToString();
+            TxtMarkaIslemleriMarkaAdi.Text = LstMarkaIslemleriMarkalar.Text;
+            LblMarkaIslemleriMarkaId.Text = LstMarkaIslemleriMarkalar.SelectedValue.ToString();
         }
 
         private void BtnMarkaSil_Click(object sender, EventArgs e)
@@ -302,14 +395,14 @@ namespace teknikservisotomasyonu
             LblMarkaIslemleriMarkaId.Text = "";
             BtnMarkaGuncelle.Enabled = false;
             BtnMarkaSil.Enabled = false;
-            BtnYeniMarka.Enabled = true; 
+            BtnYeniMarka.Enabled = true;
 
             markadoldur();
         }
 
         private void BtnYeniMarka_Click(object sender, EventArgs e)
         {
-            if(TxtMarkaIslemleriMarkaAdi.Text == "")
+            if (TxtMarkaIslemleriMarkaAdi.Text == "")
             {
                 MessageBox.Show("Lütfen marka adı alanını doldurunuz.", "Boş Alan Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -322,23 +415,19 @@ namespace teknikservisotomasyonu
                     Ayar.con.Open();
                     cmd.ExecuteNonQuery();
                     Ayar.con.Close();
-                     markadoldur();
+                    markadoldur();
                     TxtMarkaIslemleriMarkaAdi.Text = "";
                     LblMarkaIslemleriMarkaId.Text = "";
                 }
                 catch (Exception)
                 {
-
-                    MessageBox.Show("Sistemsel hata oluştu. Daha sonra tekrar deneyin.", "Hata", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Sistemsel hata oluştu. Daha sonra tekrar deneyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
-                
         }
 
         private void BtnMarkaGuncelle_Click(object sender, EventArgs e)
         {
-
             if (TxtMarkaIslemleriMarkaAdi.Text == "" || LblMarkaIslemleriMarkaId.Text == "")
             {
                 MessageBox.Show("Lütfen tüm alanları doldurunuz yada marka seçiniz.", "Boş Alan Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -349,7 +438,7 @@ namespace teknikservisotomasyonu
                 {
                     SqlCommand cmd = new SqlCommand("Update Marka Set MarkaAdi = @p1 where Markaid = @p2", Ayar.con);
                     cmd.Parameters.AddWithValue("@p1", TxtMarkaIslemleriMarkaAdi.Text.ToUpper());
-                    cmd.Parameters.AddWithValue("@p2",LblMarkaIslemleriMarkaId.Text);
+                    cmd.Parameters.AddWithValue("@p2", LblMarkaIslemleriMarkaId.Text);
                     Ayar.con.Open();
                     cmd.ExecuteNonQuery();
                     Ayar.con.Close();
@@ -359,10 +448,8 @@ namespace teknikservisotomasyonu
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Sistemsel hata oluştu. Daha sonra tekrar deneyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -377,7 +464,6 @@ namespace teknikservisotomasyonu
 
         private void BtnCihazİslemleriYeniCihaz_Click(object sender, EventArgs e)
         {
-
             try
             {
                 SqlCommand cmd = new SqlCommand("Insert into Cihazlar (CihazAdi) values (@p1)", Ayar.con);
@@ -452,25 +538,10 @@ namespace teknikservisotomasyonu
             }
         }
 
-        private void LstCihazİslemleriCihazAdi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstYedekParcaKategoriİslemleri_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void LstCihazİslemleriCihazAdi_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void label6_Click(object sender, EventArgs e) { }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void lstYedekParcaKategoriİslemleri_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void lstYedekParcaKategoriİslemleri_DoubleClick(object sender, EventArgs e)
         {
@@ -564,21 +635,13 @@ namespace teknikservisotomasyonu
             }
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void textBox1_TextChanged_1(object sender, EventArgs e) { }
+        private void label13_Click(object sender, EventArgs e) { }
 
         private void LstYedekParcaİslemleri_DoubleClick(object sender, EventArgs e)
         {
             if (LblYedekParcaİslemleriİslemler.Text == "KATEGORİLER")
             {
-
                 int id = int.Parse(LstYedekParcaİslemleri.SelectedValue.ToString());
                 LstYedekParcaİslemleri.DataSource = null;
                 LblYedekParcaİslemleriİslemler.Text = "MODELLER";
@@ -616,7 +679,7 @@ namespace teknikservisotomasyonu
 
         private void BtnYedekParcaİslemleriYeniYedekParca_Click(object sender, EventArgs e)
         {
-         if(TxtYedekParcaİslemleriModel.Text != "" && TxtYedekParcaİslemleriStok.Text != "" && TxtYedekParcaİşlemleriEkÖzellikler.Text != "" && CmbYedekParçaİslemleriKategori.Text != "" && CmbYedekParçaİslemleriMarka.Text != "" )
+            if (TxtYedekParcaİslemleriModel.Text != "" && TxtYedekParcaİslemleriStok.Text != "" && TxtYedekParcaİşlemleriEkÖzellikler.Text != "" && CmbYedekParçaİslemleriKategori.Text != "" && CmbYedekParçaİslemleriMarka.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("Insert into YedekParca (Kategori,Marka,Model,Stok,EkÖzellikler) values (@p1,@p2,@p3,@p4,@p5)", Ayar.con);
                 cmd.Parameters.AddWithValue("@p1", CmbYedekParçaİslemleriKategori.SelectedValue);
@@ -639,9 +702,9 @@ namespace teknikservisotomasyonu
                 BtnYedekParcaİslemlerSil.Enabled = false;
                 BtnYedekParcaİslemleriYeniYedekParca.Enabled = true;
             }
-            else 
+            else
             {
-                MessageBox.Show("Boş alan bırakmayınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);            
+                MessageBox.Show("Boş alan bırakmayınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -712,78 +775,24 @@ namespace teknikservisotomasyonu
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                if (dr[2].ToString() == "True")
-                {
-                    ChcPersonelEkleme.Checked = true;
-                }
-                else
-                {
-                    ChcPersonelEkleme.Checked = false;
-                }
-
-                if (dr[3].ToString() == "True")
-                {
-                    ChcPersonelSilme.Checked = true;
-                }
-                else
-                {
-                    ChcPersonelSilme.Checked = false;
-                }
-
-                if (dr[4].ToString() == "True")
-                {
-                    ChcKayitAcma.Checked = true;
-                }
-                else
-                {
-                    ChcKayitAcma.Checked = false;
-                }
-                if (dr[5].ToString() == "True")
-                {
-                    ChcKayitTamamlama.Checked = true;
-                }
-                else
-                {
-                    ChcKayitTamamlama.Checked = false;
-                }
-                if (dr[6].ToString() == "True")
-                {
-                    ChcYedekParca.Checked = true;
-                }
-                else
-                {
-                    ChcYedekParca.Checked = false;
-                }
-                if (dr[7].ToString() == "True")
-                {
-                    ChcCarilIslemler.Checked = true;
-                }
-                else
-                {
-                    ChcCarilIslemler.Checked = false;
-                }
-                if (dr[8].ToString() == "True")
-                {
-                    ChcSistemAyarlari.Checked = true;
-                }
-                else
-                {
-                    ChcSistemAyarlari.Checked = false;
-                }
+                ChcPersonelEkleme.Checked = dr[2].ToString() == "True";
+                ChcPersonelSilme.Checked = dr[3].ToString() == "True";
+                ChcKayitAcma.Checked = dr[4].ToString() == "True";
+                ChcKayitTamamlama.Checked = dr[5].ToString() == "True";
+                ChcYedekParca.Checked = dr[6].ToString() == "True";
+                ChcCarilIslemler.Checked = dr[7].ToString() == "True";
+                ChcSistemAyarlari.Checked = dr[8].ToString() == "True";
             }
             Ayar.con.Close();
         }
 
-        private void CmbYetkiler_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void CmbYetkiler_SelectedValueChanged(object sender, EventArgs e) { }
 
         private void BtnYetkiyiKaydet_Click(object sender, EventArgs e)
         {
             string carislem = ChcCarilIslemler.Checked ? "1" : "0";
             string kayitac = ChcKayitAcma.Checked ? "1" : "0";
-            string kayittamamla = ChcKayitTamamlama.Checked ? "1" : "0"; // CheckBox adı düzeltildi
+            string kayittamamla = ChcKayitTamamlama.Checked ? "1" : "0";
             string personelekle = ChcPersonelEkleme.Checked ? "1" : "0";
             string personelsil = ChcPersonelSilme.Checked ? "1" : "0";
             string sistemayarlari = ChcSistemAyarlari.Checked ? "1" : "0";
@@ -796,7 +805,7 @@ namespace teknikservisotomasyonu
             }
 
             SqlCommand cmd = new SqlCommand("Select * from Yetkilendirme Where Yetkiid = @p1", Ayar.con);
-            cmd.Parameters.AddWithValue("@p1", id); // SelectedValue yerine güvenli 'id' verildi
+            cmd.Parameters.AddWithValue("@p1", id);
 
             Ayar.con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
@@ -837,19 +846,15 @@ namespace teknikservisotomasyonu
             Ayar.con.Close();
 
             yetkidoldur();
-            yetkidoldur();
-
-            // Kaydetme bittikten sonra ekranı tekrar seçim moduna döndür
             TxtYetkiAdi.Visible = false;
             CmbYetkiler.Visible = true;
+            BtnYetkiGrubuEkle.Text = "Yetki Grubu Eklemek İstiyorum";
         }
-        
 
         private void BtnYetkiGrubuEkle_Click(object sender, EventArgs e)
         {
             if (TxtYetkiAdi.Visible == false)
             {
-                // Yeni ekleme moduna geç
                 TxtYetkiAdi.Visible = true;
                 CmbYetkiler.Visible = false;
                 BtnYetkiGrubuEkle.Text = "Mevcut Yetkilerden Seç";
@@ -869,14 +874,395 @@ namespace teknikservisotomasyonu
             }
             else
             {
-                // Tekrar ComboBox seçim moduna dön
                 TxtYetkiAdi.Visible = false;
                 CmbYetkiler.Visible = true;
                 BtnYetkiGrubuEkle.Text = "Yetki Grubu Eklemek İstiyorum";
                 yetkidoldur();
-
             }
         }
+
+        // --- PERSONEL EKLEME İŞLEMLERİ ---
+
+        private void BtnPersonelEkle_Click(object sender, EventArgs e)
+        {
+            panellerikapat();
+            yetkidoldur();
+            personelekletemizle();
+            PnlPersonelEkle.Visible = true;
+        }
+
+        private void BtnPersonelEkleKaydet_Click(object sender, EventArgs e)
+        {
+            if (!TxtPersonelEkleTC.MaskCompleted ||
+                string.IsNullOrWhiteSpace(TxtPersonelEkleKullaniciAdi.Text) ||
+                string.IsNullOrWhiteSpace(PersonelEkleAdiSoyadi.Text) ||
+                !PersonelEkleTelefon.MaskCompleted ||
+                string.IsNullOrWhiteSpace(PersonelEkleEmail.Text) ||
+                string.IsNullOrWhiteSpace(PersonelEkleGorevi.Text) ||
+                CmbPersonelEkleYetki.SelectedValue == null ||
+                string.IsNullOrWhiteSpace(PersonelEklemaas.Text) ||
+                string.IsNullOrWhiteSpace(PersonelEkleSifre.Text))
+            {
+                MessageBox.Show("Lütfen tüm alanları eksiksiz doldurunuz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string temizTelefon = PersonelEkleTelefon.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+            if (!temizTelefon.StartsWith("0"))
+            {
+                temizTelefon = "0" + temizTelefon;
+            }
+
+            try
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                Ayar.con.Open();
+
+                SqlCommand kontrolCmd = new SqlCommand("Select Count(*) From Personel Where (TC = @tc OR KullaniciAdi = @kadi) AND (Silindi = 0 OR Silindi IS NULL)", Ayar.con);
+                kontrolCmd.Parameters.AddWithValue("@tc", TxtPersonelEkleTC.Text);
+                kontrolCmd.Parameters.AddWithValue("@kadi", TxtPersonelEkleKullaniciAdi.Text.Trim());
+
+                if ((int)kontrolCmd.ExecuteScalar() > 0)
+                {
+                    Ayar.con.Close();
+                    MessageBox.Show("Bu T.C. Kimlik Numarası veya Kullanıcı Adı zaten kayıtlı!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                SqlCommand cmd = new SqlCommand("Insert into Personel (TC, KullaniciAdi, AdiSoyadi, Telefon, Mail, Görevi, Yetkisi, Maas, Sifre, Silindi) values (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, 0)", Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", TxtPersonelEkleTC.Text);
+                cmd.Parameters.AddWithValue("@p2", TxtPersonelEkleKullaniciAdi.Text.Trim());
+                cmd.Parameters.AddWithValue("@p3", PersonelEkleAdiSoyadi.Text.Trim());
+                cmd.Parameters.AddWithValue("@p4", temizTelefon);
+                cmd.Parameters.AddWithValue("@p5", PersonelEkleEmail.Text.Trim());
+                cmd.Parameters.AddWithValue("@p6", PersonelEkleGorevi.Text.Trim());
+                cmd.Parameters.AddWithValue("@p7", CmbPersonelEkleYetki.SelectedValue);
+                cmd.Parameters.AddWithValue("@p8", decimal.Parse(PersonelEklemaas.Text));
+                cmd.Parameters.AddWithValue("@p9", PersonelEkleSifre.Text);
+
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                MessageBox.Show("Personel başarıyla kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                personelekletemizle();
+                personeldoldur();
+            }
+            catch (FormatException)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                MessageBox.Show("Maaş alanına sadece sayısal değer giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // --- PERSONEL DÜZENLEME VE SİLME İŞLEMLERİ ---
+
+        private void BtnPersonelDüzenle_Click(object sender, EventArgs e)
+        {
+            panellerikapat();
+            yetkidoldur();
+            personeldoldur();
+            personelduzenletemizle();
+            PnlPersonelDuzenle.Visible = true;
+        }
+
+        private void LstPersonelDuzenlePersoneller_DoubleClick(object sender, EventArgs e)
+        {
+            if (LstPersonelDuzenlePersoneller.SelectedValue == null) return;
+
+            if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+            SqlCommand cmd = new SqlCommand("Select * From Personel Where PersonelNo = @p1", Ayar.con);
+            cmd.Parameters.AddWithValue("@p1", LstPersonelDuzenlePersoneller.SelectedValue);
+
+            Ayar.con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                TxtPersonelDuzenleNo.Text = dr["PersonelNo"].ToString();
+                TxtPersonelDuzenleTC.Text = dr["TC"].ToString();
+                TxtPersonelDuzenleKullaniciAdi.Text = dr["KullaniciAdi"].ToString();
+                TxtPersonelDuzenleAdiSoyadi.Text = dr["AdiSoyadi"].ToString();
+                TxtPersonelDuzenleTelefon.Text = dr["Telefon"].ToString();
+                TxtPersonelDuzenleEmail.Text = dr["Mail"].ToString();
+                TxtPersonelDuzenleGorevi.Text = dr["Görevi"].ToString();
+                CmbPersonelDuzenleYetki.SelectedValue = dr["Yetkisi"];
+                TxtPersonelDuzenleMaas.Text = dr["Maas"].ToString();
+                TxtPersonelDuzenleSifre.Text = dr["Sifre"].ToString();
+            }
+            dr.Close();
+            Ayar.con.Close();
+        }
+
+        private void BtnPersonelDuzenleGuncelle_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtPersonelDuzenleNo.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleTC.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleKullaniciAdi.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleAdiSoyadi.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleTelefon.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleEmail.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleGorevi.Text) ||
+                CmbPersonelDuzenleYetki.SelectedValue == null ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleMaas.Text) ||
+                string.IsNullOrWhiteSpace(TxtPersonelDuzenleSifre.Text))
+            {
+                MessageBox.Show("Lütfen listeden bir personel seçiniz ve boş alan bırakmayınız.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string temizTelefon = TxtPersonelDuzenleTelefon.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+            if (!temizTelefon.StartsWith("0"))
+            {
+                temizTelefon = "0" + temizTelefon;
+            }
+
+            try
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                Ayar.con.Open();
+
+                SqlCommand kontrolCmd = new SqlCommand("Select Count(*) From Personel Where (TC = @tc OR KullaniciAdi = @kadi) AND PersonelNo != @pno AND (Silindi = 0 OR Silindi IS NULL)", Ayar.con);
+                kontrolCmd.Parameters.AddWithValue("@tc", TxtPersonelDuzenleTC.Text.Trim());
+                kontrolCmd.Parameters.AddWithValue("@kadi", TxtPersonelDuzenleKullaniciAdi.Text.Trim());
+                kontrolCmd.Parameters.AddWithValue("@pno", TxtPersonelDuzenleNo.Text);
+
+                if ((int)kontrolCmd.ExecuteScalar() > 0)
+                {
+                    Ayar.con.Close();
+                    MessageBox.Show("Bu T.C. Kimlik Numarası veya Kullanıcı Adı başka bir personele ait!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                SqlCommand cmd = new SqlCommand("Update Personel set TC = @p1, KullaniciAdi = @p2, AdiSoyadi = @p3, Telefon = @p4, Mail = @p5, Görevi = @p6, Yetkisi = @p7, Maas = @p8, Sifre = @p9 Where PersonelNo = @p10", Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", TxtPersonelDuzenleTC.Text.Trim());
+                cmd.Parameters.AddWithValue("@p2", TxtPersonelDuzenleKullaniciAdi.Text.Trim());
+                cmd.Parameters.AddWithValue("@p3", TxtPersonelDuzenleAdiSoyadi.Text.Trim());
+                cmd.Parameters.AddWithValue("@p4", temizTelefon);
+                cmd.Parameters.AddWithValue("@p5", TxtPersonelDuzenleEmail.Text.Trim());
+                cmd.Parameters.AddWithValue("@p6", TxtPersonelDuzenleGorevi.Text.Trim());
+                cmd.Parameters.AddWithValue("@p7", CmbPersonelDuzenleYetki.SelectedValue);
+                cmd.Parameters.AddWithValue("@p8", decimal.Parse(TxtPersonelDuzenleMaas.Text));
+                cmd.Parameters.AddWithValue("@p9", TxtPersonelDuzenleSifre.Text);
+                cmd.Parameters.AddWithValue("@p10", TxtPersonelDuzenleNo.Text);
+
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                MessageBox.Show("Personel bilgileri başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                personeldoldur();
+                personelduzenletemizle();
+            }
+            catch (FormatException)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                MessageBox.Show("Maaş alanına sadece sayısal değer giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnPersonelDuzenleSil_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtPersonelDuzenleNo.Text))
+            {
+                MessageBox.Show("Lütfen listeden silinecek personeli seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult onay = MessageBox.Show("Seçili personeli silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (onay == DialogResult.Yes)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                SqlCommand cmd = new SqlCommand("Update Personel set Silindi = 1 Where PersonelNo = @p1", Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", TxtPersonelDuzenleNo.Text);
+
+                Ayar.con.Open();
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                MessageBox.Show("Personel silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                personeldoldur();
+                personelduzenletemizle();
+            }
+        }
+
+        // --- SİSTEM AYARLARI, ŞİRKET BİLGİLERİ VE LİMİT İŞLEMLERİ (#14) ---
+
+        private void BtnSirketBilgileriveLimitler_Click(object sender, EventArgs e)
+        {
+            panellerikapat();
+            PnlSirketBilgileri.Visible = true;
+
+            if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+
+            // İşlemler ComboBox'ını doldur
+            SqlDataAdapter adtr = new SqlDataAdapter("Select * From Islemler Where Silindi = 0 OR Silindi IS NULL", Ayar.con);
+            DataTable table = new DataTable();
+            Ayar.con.Open();
+            adtr.Fill(table);
+            CmbIslem.DataSource = null;
+            CmbIslem.DisplayMember = "Islem";
+            CmbIslem.ValueMember = "Islemid";
+            CmbIslem.DataSource = table;
+            CmbIslem.SelectedIndex = -1;
+            Ayar.con.Close();
+
+            // Sistem tablosundan mevcut şirket ve limit bilgilerini çek
+            iletisimvar = false;
+            SqlCommand cmd = new SqlCommand("Select * From Sistem", Ayar.con);
+            Ayar.con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                iletisimvar = true;
+                TxtSirketAdi.Text = dr["SirketAdi"].ToString();
+                TxtVergiNo.Text = dr["SirketVergiNo"].ToString();
+                TxtTelefon.Text = dr["SirketTelefon"].ToString();
+                TxtFax.Text = dr["SirketFax"].ToString();
+                TxtAdres.Text = dr["SirketAdres"].ToString();
+                TxtEmail.Text = dr["SirketMail"].ToString();
+                TxtGEmail.Text = dr["SirketGonderenMail"].ToString();
+                TxtCariLimit.Text = dr["MaximumCariTutari"].ToString();
+
+                if (!string.IsNullOrEmpty(dr["GonderenMailSifre"].ToString()))
+                {
+                    TxtGEmailSifre.Text = Ayar.sifreCoz(dr["GonderenMailSifre"].ToString(), Ayar.anahtarkelime);
+                }
+            }
+            dr.Close();
+            Ayar.con.Close();
+        }
+
+        private void BtnBilgiKaydet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql;
+                if (iletisimvar)
+                {
+                    sql = "Update Sistem set SirketAdi = @p1, SirketVergiNo = @p2, SirketTelefon = @p3, SirketFax = @p4, SirketAdres = @p5, SirketMail = @p6, SirketGonderenMail = @p7, GonderenMailSifre = @p8";
+                }
+                else
+                {
+                    sql = "Insert into Sistem (SirketAdi, SirketVergiNo, SirketTelefon, SirketFax, SirketAdres, SirketMail, SirketGonderenMail, GonderenMailSifre) values (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)";
+                }
+
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                SqlCommand cmd = new SqlCommand(sql, Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", TxtSirketAdi.Text);
+                cmd.Parameters.AddWithValue("@p2", TxtVergiNo.Text);
+                cmd.Parameters.AddWithValue("@p3", TxtTelefon.Text);
+                cmd.Parameters.AddWithValue("@p4", TxtFax.Text);
+                cmd.Parameters.AddWithValue("@p5", TxtAdres.Text);
+                cmd.Parameters.AddWithValue("@p6", TxtEmail.Text);
+                cmd.Parameters.AddWithValue("@p7", TxtGEmail.Text);
+                cmd.Parameters.AddWithValue("@p8", Ayar.sifrele(TxtGEmailSifre.Text, Ayar.anahtarkelime));
+
+                Ayar.con.Open();
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                MessageBox.Show("İşlem başarılı, değişiklikler kayıt edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panellerikapat();
+            }
+            catch (Exception ex)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnCariGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql;
+                if (iletisimvar)
+                {
+                    sql = "Update Sistem set MaximumCariTutari = @p1";
+                }
+                else
+                {
+                    sql = "Insert into Sistem (MaximumCariTutari) values (@p1)";
+                }
+
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                SqlCommand cmd = new SqlCommand(sql, Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", TxtCariLimit.Text);
+
+                Ayar.con.Open();
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                MessageBox.Show("İşlem başarılı, değişiklikler kayıt edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnIslemEkle_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TxtIslem.Text))
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                SqlCommand cmd = new SqlCommand("Insert into Islemler (Islem, Silindi) values (@p1, 0)", Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", TxtIslem.Text.ToUpper());
+
+                Ayar.con.Open();
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                TxtIslem.Clear();
+                MessageBox.Show("İşlem başarılı, değişiklikler kayıt edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panellerikapat();
+            }
+            else
+            {
+                MessageBox.Show("İşleminizi yazmalısınız.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void BtnIslemSil_Click(object sender, EventArgs e)
+        {
+            if (CmbIslem.SelectedValue != null && CmbIslem.Text != "")
+            {
+                if (Ayar.con.State == ConnectionState.Open) Ayar.con.Close();
+                SqlCommand cmd = new SqlCommand("Update Islemler set Silindi = 1 Where Islemid = @p1", Ayar.con);
+                cmd.Parameters.AddWithValue("@p1", CmbIslem.SelectedValue);
+
+                Ayar.con.Open();
+                cmd.ExecuteNonQuery();
+                Ayar.con.Close();
+
+                MessageBox.Show("İşlem başarılı, değişiklikler kayıt edildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                panellerikapat();
+            }
+            else
+            {
+                MessageBox.Show("İşleminizi seçmelisiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void BtnCihazKayit_Click(object sender, EventArgs e)
+        {
+            FrmCihazKayit frm = new FrmCihazKayit();
+            frm.Show();
+        }
+
+        private void BtnMailGonder_Click(object sender, EventArgs e)
+        {
+            FrmMailGonder mail = new FrmMailGonder();
+            mail.Show();
+        }
     }
-    
 }

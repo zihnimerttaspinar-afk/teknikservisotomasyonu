@@ -14,7 +14,10 @@ namespace teknikservisotomasyonu
     internal class Ayar
     {
         public static SqlConnection con;
-        public static string sifrele (string sifrelenecek,string anahtar)
+        public static string kullaniciid = "";
+        public static string anahtarkelime = "teknikservis123";
+
+        public static string sifrele(string sifrelenecek, string anahtar)
         {
             byte[] data = UTF8Encoding.UTF8.GetBytes(sifrelenecek);
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
@@ -28,6 +31,7 @@ namespace teknikservisotomasyonu
                 }
             }
         }
+
         public static string sifreCoz(string cozulecek, string key)
         {
             byte[] data = Convert.FromBase64String(cozulecek);

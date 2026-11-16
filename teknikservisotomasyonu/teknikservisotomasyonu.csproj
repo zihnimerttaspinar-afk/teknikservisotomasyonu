@@ -80,6 +80,18 @@
     <Compile Include="FrmAnasayfa.Designer.cs">
       <DependentUpon>FrmAnasayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCihazKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCihazKayit.Designer.cs">
+      <DependentUpon>FrmCihazKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMailGonder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMailGonder.Designer.cs">
+      <DependentUpon>FrmMailGonder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="..\..\..\..\Desktop\teknikservis.resx">
@@ -90,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnasayfa.resx">
       <DependentUpon>FrmAnasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCihazKayit.resx">
+      <DependentUpon>FrmCihazKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMailGonder.resx">
+      <DependentUpon>FrmMailGonder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
